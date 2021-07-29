@@ -1,43 +1,70 @@
-### Objective
+# Getting Started with Create React App
 
-SaltPay is branching into the music business and needs a new website. Build it using JavaScript and React.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Brief
+## Available Scripts
 
-In a fictional world, SaltPay is branching into the music business and we need a new a website. This website needs to display the top 100 songs based on the iTunes API. This code challenge allows you to choose your own path and lets you flaunt your creative panache and technical skills along the way.
+In the project directory, you can run:
 
-### Tasks
+### `yarn start`
 
--   Implement assignment using:
-    -   Language: **JavaScript**
-    -   Framework: **React**
--   Show top 100 albums based on the json feed here: `https://itunes.apple.com/us/rss/topalbums/limit=100/json`
--   Cross browser support (or graceful degradation)
--   A clean modern look and responsive design
--   A good user experience
--   Use a CSS Framework (Bootstrap, Foundation, Pure, etc.…)
--   Allow the top 100 to be searchable
--   Surprise us! Add a feature that you think would work well here (for instance, advanced search, integration with other API, a "Favorite" functionality)
-    -   Describe the feature in separate markdown file
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### Deliverables
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-Make sure to include all source code in the repository. 
+### `yarn test`
 
-### Evaluation Criteria
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
--   **JavaScript** best practices
--   We're looking for you to produce working code, with enough room to demonstrate how to structure components in a small program.
--   Show us your work through your commit history
--   Completeness: did you complete the features?
--   Correctness: does the functionality act in sensible, thought-out ways?
--   Maintainability: is it written in a clean, maintainable way?
--   Testing: is the system adequately tested?
+### `yarn build`
 
-### CodeSubmit
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Please organize, design, test and document your code as if it were going into production - then push your changes to the master branch. After you have pushed your code, you may submit the assignment on the assignment page.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-All the best and happy coding,
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-The SaltPay Team
+### `yarn eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
