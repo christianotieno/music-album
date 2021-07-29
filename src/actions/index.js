@@ -5,4 +5,4 @@ const getAlbums = (albums) => ({
   payload: albums,
 });
 
-export default { getAlbums };
+export default getAlbums;

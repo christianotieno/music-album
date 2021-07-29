@@ -1,0 +1,14 @@
+.album-item {
+  width: 300px;
+  border: 1px solid #ccc;
+  margin: 5px;
+}
+
+.album-item-img {
+  width: 300px;
+  object-fit: cover;
+}
+
+.album-item-body {
+  padding: 0 10px;
+}
