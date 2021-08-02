@@ -7,6 +7,7 @@ import AlbumItem from '../components/AlbumItem';
 import Dropdown from '../helpers/Dropdown';
 import genre from '../helpers/genre';
 import { clearAlbum } from '../actions/index';
+import NavBar from '../components/NavBar';
 import '../styles/album-list.css';
 
 const AlbumList = ({ albums, fetchAlbums }) => {
@@ -18,7 +19,7 @@ const AlbumList = ({ albums, fetchAlbums }) => {
   const groups = genre(albums.albums);
   return (
     <div className="album-list">
-      <h1>Album List</h1>
+      <NavBar />
       <Dropdown genres={groups} />
       <div className="album-list-body">
         {

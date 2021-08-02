@@ -27,19 +27,7 @@ const AlbumItem = (props) => {
   );
 };
 AlbumItem.propTypes = {
-  album: PropTypes.objectOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      'im:image': PropTypes.string.isRequired,
-      attributes: PropTypes.string.isRequired,
-
-    }),
-  ).isRequired,
-  history: PropTypes.objectOf(
-    PropTypes.shape({
-      push: PropTypes.func.isRequired,
-    }),
-  ).isRequired,
+  album: PropTypes.instanceOf(Object).isRequired,
+  history: PropTypes.instanceOf(Object).isRequired,
 };
 export default withRouter(AlbumItem);

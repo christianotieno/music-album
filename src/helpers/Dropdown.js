@@ -5,8 +5,12 @@ const Dropdown = (props) => {
   const { genres } = props;
   const [selectedGenre, setSelectedGenre] = useState('');
   return (
-    <div>
-      <select value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)}>
+    <div className="genre-list">
+      <select
+        className="album-item-genre"
+        value={selectedGenre}
+        onChange={(e) => setSelectedGenre(e.target.value)}
+      >
         {genres.map((
           genre,
         ) => (

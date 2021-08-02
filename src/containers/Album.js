@@ -4,6 +4,7 @@ import { withRouter } from 'react-router';
 import fetchTracks from '../actions/fetchTracks';
 import TrackItem from '../components/TrackItem';
 import { clearTracks } from '../actions/index';
+import NavBar from '../components/NavBar';
 
 const Album = ({ albums, match, fetchTracks }) => {
   const { params: { albumName } } = match;
@@ -19,7 +20,7 @@ const Album = ({ albums, match, fetchTracks }) => {
 
   const element = (
     <div>
-      Here is a list of tracks in this album
+      <NavBar />
       {
           albums.tracks.map((track) => (
             <TrackItem
