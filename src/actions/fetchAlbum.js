@@ -7,7 +7,7 @@ import {
   apiTokenEndpoint,
 } from '../helpers/apiEndpoints';
 
-const fetchAlbum = (albumName) => {
+const fetchAlbum = (albumName) => (dispatch) => {
   const spotify = Credentials();
   const encodedData = Buffer.from(`${spotify.ClientID}:${spotify.ClientSecret}`).toString('base64');
   axios(apiTokenEndpoint, {
@@ -19,7 +19,7 @@ const fetchAlbum = (albumName) => {
     method: 'POST',
   })
     .then((tokenResponse) => {
-      const token = tokenResponse.data.data.access_token;
+      const token = tokenResponse.data.access_token;
       const searchForAlbum = baseSearchUrl + albumName + searchParams;
       axios.get(searchForAlbum, {
         headers: {
@@ -27,7 +27,8 @@ const fetchAlbum = (albumName) => {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
-      }).then((results) => (dispatch) => {
+      }).then((results) => {
+        console.log(results.data.albums.items);
         dispatch(getAlbum(results.data.albums.items));
       }).catch((error) => {
         console.log(error.message);

@@ -17,6 +17,7 @@ const Album = ({ albums, match, fetchAlbum }) => {
   const element = (
     <div>
       Here is a list of tracks in this album
+      {/* {album} */}
     </div>
   );
   return album ? element : div;
