@@ -9,19 +9,13 @@ const TrackItem = (props) => {
       <div className="album-item-body">
         <h3>{track.name}</h3>
         <h4>
-          Track number:
-          {' '}
-          {track.track_number}
+          This track is number {track.track_number} in the album.
         </h4>
         <h5>
-          By:
-          {' '}
-          {track.album.artists[0].name}
+          Artists: {track.album.artists[0].name}
         </h5>
         <p>
-          Popularity Score:
-          {' '}
-          {track.popularity}
+          It has a popularity score of {track.popularity}.
         </p>
       </div>
     </div>

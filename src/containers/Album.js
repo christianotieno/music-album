@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import fetchTracks from '../actions/fetchTracks';
 import TrackItem from '../components/TrackItem';
+import { clearTracks } from '../actions/index';
 
 const Album = ({ albums, match, fetchTracks }) => {
   const { params: { albumName } } = match;
   const { tracks } = albums;
   useEffect(() => {
     fetchTracks(albumName);
-  }, [fetchTracks, albumName]);
+    clearTracks();
+  }, [fetchTracks, clearTracks]);
 
   const div = (
     <div>Loading...</div>
