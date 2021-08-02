@@ -1,10 +1,9 @@
 import axios from 'axios';
-import getAlbums from './index';
-import albumFeeds from '../helpers/apiEndpoints';
+import { getAlbums } from './index';
+import { albumsFeed } from '../helpers/apiEndpoints';
 
 const fetchAlbums = () => (dispatch) => {
-  axios.get(albumFeeds).then((results) => {
-    // console.log(results.data.feed.entry);
+  axios.get(albumsFeed).then((results) => {
     dispatch(getAlbums(results.data.feed.entry));
   });
 };

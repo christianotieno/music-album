@@ -12,12 +12,11 @@ const AlbumList = ({ albums, fetchAlbums }) => {
     <div className="album-list">
       <h1>Album List</h1>
       <div className="album-list-body">
-        {console.log(albums)}
         {
           albums.albums.map((album) => (
             <AlbumItem
               album={album}
-              key={album.id['im:id']}
+              key={album.id.attributes['im:id']}
             />
           ))
         }

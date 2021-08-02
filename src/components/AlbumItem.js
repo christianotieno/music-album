@@ -1,19 +1,31 @@
 /* eslint-disable */
 import React from 'react';
 import '../styles/album-item.css';
+import { withRouter } from 'react-router';
 
-const AlbumItem = ({ album }) => (
-  <div className="album-item">
-    <img src={album['im:image'][2].label} alt={album.title.label} />
-    <div className="album-item-body">
-      <h3>{album.title.label}</h3>
-      <p>
-        Releases Date:
-        {' '}
-        {album['im:releaseDate'].attributes.label}
-      </p>
+const AlbumItem = (props) => {
+  const { album } = props;
+  const showAlbum = (albumName) => props.history.push(`/album/${albumName}`);
+  console.log('albumitem');
+
+  return (
+    <div
+      className="album-item"
+      onClick={() => {
+        showAlbum(album['im:name'].label);
+      }}
+    >
+      <img src={album['im:image'][2].label} alt={album.title.label} />
+      <div className="album-item-body">
+        <h3>{album.title.label}</h3>
+        <p>
+          Date released:
+          {' '}
+          {album['im:releaseDate'].attributes.label}
+        </p>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
-export default AlbumItem;
+export default withRouter(AlbumItem);
