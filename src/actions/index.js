@@ -1,14 +1,14 @@
 const GET_ALBUMS = 'GET_ALBUMS';
-const GET_ALBUM = 'GET_ALBUM';
+const GET_TRACKS = 'GET_TRACKS';
 
 const getAlbums = (albums) => ({
   type: GET_ALBUMS,
   payload: albums,
 });
 
-const getAlbum = (album) => ({
-  type: GET_ALBUM,
-  payload: album,
+const getTracks = (tracks) => ({
+  type: GET_TRACKS,
+  payload: tracks,
 });
 
-export { getAlbums, getAlbum };
+export { getAlbums, getTracks };

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getAlbum } from './index';
+import { getTracks } from './index';
 import Credentials from '../helpers/Credentials';
 import {
   searchParams,
@@ -7,7 +7,7 @@ import {
   apiTokenEndpoint,
 } from '../helpers/apiEndpoints';
 
-const fetchAlbum = (albumName) => (dispatch) => {
+const fetchTracks = (albumName) => (dispatch) => {
   const spotify = Credentials();
   const encodedData = Buffer.from(`${spotify.ClientID}:${spotify.ClientSecret}`).toString('base64');
   axios(apiTokenEndpoint, {
@@ -28,8 +28,7 @@ const fetchAlbum = (albumName) => (dispatch) => {
           Authorization: `Bearer ${token}`,
         },
       }).then((results) => {
-        console.log(results.data.albums.items);
-        dispatch(getAlbum(results.data.albums.items));
+        dispatch(getTracks(results.data.tracks.items));
       }).catch((error) => {
         console.log(error.message);
       });
@@ -39,4 +38,4 @@ const fetchAlbum = (albumName) => (dispatch) => {
     });
 };
 
-export default fetchAlbum;
+export default fetchTracks;

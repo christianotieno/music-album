@@ -12,7 +12,7 @@ const AlbumItem = (props) => {
     <div
       className="album-item"
       onClick={() => {
-        showAlbum(album['im:name'].label);
+        showAlbum(album.title.label);
       }}
     >
       <img src={album['im:image'][2].label} alt={album.title.label} />

@@ -1,9 +1,9 @@
 const GET_ALBUMS = 'GET_ALBUMS';
-const GET_ALBUM = 'GET_ALBUM';
+const GET_TRACKS = 'GET_TRACKS';
 
 const initialState = {
   albums: [],
-  album: [],
+  tracks: [],
 };
 
 const albumReducer = (state = initialState, action) => {
@@ -12,9 +12,9 @@ const albumReducer = (state = initialState, action) => {
       return {
         albums: [...action.payload],
       };
-    case GET_ALBUM:
+    case GET_TRACKS:
       return {
-        album: [...action.payload],
+        tracks: [...action.payload],
       };
     default: return state;
   }
