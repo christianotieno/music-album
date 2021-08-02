@@ -1,5 +1,5 @@
-/* eslint-disable */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const TrackItem = (props) => {
   const { track } = props;
@@ -9,17 +9,29 @@ const TrackItem = (props) => {
       <div className="album-item-body">
         <h3>{track.name}</h3>
         <h4>
-          This track is number {track.track_number} in the album.
+          This track is number
+          {' '}
+          {track.track_number}
+          {' '}
+          in the album.
         </h4>
         <h5>
-          Artists: {track.album.artists[0].name}
+          Artists:
+          {' '}
+          {track.album.artists[0].name}
         </h5>
         <p>
-          It has a popularity score of {track.popularity}.
+          It has a popularity score of
+          {' '}
+          {track.popularity}
+          .
         </p>
       </div>
     </div>
   );
 };
 
+TrackItem.propTypes = {
+  track: PropTypes.instanceOf(Object).isRequired,
+};
 export default TrackItem;

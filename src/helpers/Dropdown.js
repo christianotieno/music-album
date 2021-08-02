@@ -1,5 +1,5 @@
-/* eslint-disable */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Dropdown = (props) => {
   const { genres } = props;
@@ -23,4 +23,7 @@ const Dropdown = (props) => {
   );
 };
 
+Dropdown.propTypes = {
+  genres: PropTypes.instanceOf(Array).isRequired,
+};
 export default Dropdown;
