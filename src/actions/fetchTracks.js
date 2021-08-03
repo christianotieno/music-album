@@ -28,20 +28,16 @@ const fetchTracks = (albumName) => (dispatch) => {
           Authorization: `Bearer ${token}`,
         },
       }).then((results) => {
-        console.log(results.data.tracks.items);
         dispatch(getTracks(results.data.tracks.items));
       }).catch((error) => {
         if (error.message === 'Request failed with status code 400') {
-          console.log('Bad Request');
-        } else if (error.message === 'Network Error') {
-          console.log('Not sent: Check Request parameters');
-        } else (console.log(error.message));
+          dispatch(trackNotFound());
+        }
       });
     })
     .catch((error) => {
       if (error.message === 'Request failed with status code 400') {
         dispatch(trackNotFound());
-        console.log('Bad Request');
       }
     });
 };
