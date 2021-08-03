@@ -6,22 +6,26 @@ import PropTypes from 'prop-types';
 const AlbumItem = (props) => {
   const { album } = props;
   const showAlbum = (albumName) => props.history.push(`/album/${albumName}`);
+
   return (
     <div
       className="album-item"
-      onClick={() => showAlbum(album.title.label)}
-      onKeyDown={() => showAlbum(album.title.label)}
+      onClick={() => showAlbum(album.title)}
+      onKeyDown={() => showAlbum(album.title)}
       role="button"
       tabIndex={0}
     >
-      <img src={album['im:image'][2].label} alt={album.title.label} />
+      <img src={album.image} alt={album.title} />
       <div className="album-item-body">
-        <h3>{album.title.label}</h3>
+        <h3>{album.title}</h3>
         <p>
           Date released:
           {' '}
-          {album['im:releaseDate'].attributes.label}
+          {album.releaseDate}
         </p>
+      </div>
+      <div className="genre">
+        <span className="album-item-genre">{album.categoryName}</span>
       </div>
     </div>
   );

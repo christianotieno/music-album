@@ -1,7 +1,7 @@
 const GET_ALBUMS = 'GET_ALBUMS';
 const GET_TRACKS = 'GET_TRACKS';
 const CLEAR_ALBUM = 'CLEAR_ALBUM';
-const CLEAR_TRACKS = 'CLEAR_TRACKS';
+const CHANGE_FILTER = 'CHANGE_FILTER';
 
 const getAlbums = (albums) => ({
   type: GET_ALBUMS,
@@ -17,10 +17,11 @@ const clearAlbum = () => ({
   type: CLEAR_ALBUM,
 });
 
-const clearTracks = () => ({
-  type: CLEAR_TRACKS,
+const changeFilter = (filter) => ({
+  type: CHANGE_FILTER,
+  payload: filter,
 });
 
 export {
-  getAlbums, getTracks, clearAlbum, clearTracks,
+  getAlbums, getTracks, clearAlbum, changeFilter,
 };

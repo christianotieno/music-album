@@ -4,50 +4,62 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import fetchAlbums from '../actions/fetchAlbums';
 import AlbumItem from '../components/AlbumItem';
-import Dropdown from '../helpers/Dropdown';
-import genre from '../helpers/genre';
-import { clearAlbum } from '../actions/index';
+import { clearAlbum, changeFilter } from '../actions/index';
+import GenreFilter from '../components/GenreFilter';
+import genres from '../helpers/genres';
 import NavBar from '../components/NavBar';
 import '../styles/album-list.css';
 
-const AlbumList = ({ albums, fetchAlbums }) => {
+const AlbumList = ({
+  albums, fetchAlbums, filter, clearAlbum, changeFilter,
+}) => {
   useEffect(() => {
     fetchAlbums();
     clearAlbum();
   }, [fetchAlbums, clearAlbum]);
 
-  const groups = genre(albums.albums);
+  const handleFilterChange = (filter) => changeFilter(filter);
+  const filterId = Object.keys(genres).filter((key) => genres[key] === filter)[0];
+  const filtered = filter === 'All' ? albums.albums : albums.albums.filter((album) => album.categoryId.includes(parseInt(filterId)));
+
   return (
     <div className="album-list">
       <NavBar />
-      <Dropdown genres={groups} />
       <div className="album-list-body">
-        {
-          albums.albums.map((album) => (
+        <div className="album-list-body-header">
+          <h2>Top 100 Grossing &amp; Popular Albums</h2>
+          <GenreFilter changeFilter={handleFilterChange} />
+        </div>
+        <div className="album-list-albums">
+          {
+          filtered.map((album) => (
             <AlbumItem
               album={album}
-              key={album.id.attributes['im:id']}
+              key={album.id.toString()}
             />
           ))
         }
+        </div>
       </div>
     </div>
   );
 };
 
 AlbumList.propTypes = {
-  albums: PropTypes.arrayOf(Object).isRequired,
+  albums: PropTypes.instanceOf(Object).isRequired,
   fetchAlbums: PropTypes.func.isRequired,
   clearAlbum: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ albums }) => ({
+const mapStateToProps = ({ albums, filter }) => ({
   albums,
+  filter,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   fetchAlbums: () => dispatch(fetchAlbums()),
   clearAlbum: () => dispatch(clearAlbum()),
+  changeFilter: (filter) => dispatch(changeFilter(filter)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlbumList);

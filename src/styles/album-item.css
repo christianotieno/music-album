@@ -45,16 +45,34 @@
   color: #6b6b6b;
 }
 
-.genre-list {
-  /* position: absolute; */
+.genre {
+  position: absolute;
   bottom: 5px;
   left: 5px;
 }
-
 .album-item-genre {
+  display: inline-block;
+  background-color: #6b6b6b;
   color: white;
   padding: 5px;
   margin: 5px;
   font-size: 12px;
   border-radius: 5px;
+}
+
+
+.rating {
+  padding: 5px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+.star-icon {
+  color: #d4af37;
+  margin-right: 5px;
+  font-size: 20px;
 }

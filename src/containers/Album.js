@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import fetchTracks from '../actions/fetchTracks';
 import TrackItem from '../components/TrackItem';
-import { clearTracks } from '../actions/index';
 import NavBar from '../components/NavBar';
 
 const Album = ({ albums, match, fetchTracks }) => {
@@ -11,13 +10,11 @@ const Album = ({ albums, match, fetchTracks }) => {
   const { tracks } = albums;
   useEffect(() => {
     fetchTracks(albumName);
-    clearTracks();
-  }, [fetchTracks, clearTracks]);
+  }, [fetchTracks, albumName]);
 
   const div = (
     <div>Loading...</div>
   );
-
   const element = (
     <div>
       <NavBar />
