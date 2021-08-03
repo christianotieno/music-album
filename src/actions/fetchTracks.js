@@ -28,6 +28,7 @@ const fetchTracks = (albumName) => (dispatch) => {
           Authorization: `Bearer ${token}`,
         },
       }).then((results) => {
+        console.log(results.data.tracks.items);
         dispatch(getTracks(results.data.tracks.items));
       }).catch((error) => {
         if (error.message === 'Request failed with status code 400') {
