@@ -4,13 +4,24 @@
 
 ## Table of Contents
 
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
-* [Setup](#setup)
-  * [Get API access keys](#get-api-access-keys)
-* [Author](#author)
-* [Show your Support](#show-your-support)
-* [Acknowledgements](#acknowledgements)
+- [MUSIC ALBUM CATALOGUE](#music-album-catalogue)
+  - [Table of Contents](#table-of-contents)
+  - [About The Project](#about-the-project)
+    - [Home Page (Landing)](#home-page-landing)
+    - [Mobile View](#mobile-view)
+    - [Built With](#built-with)
+  - [Setup](#setup)
+    - [Install dependencies](#install-dependencies)
+    - [Get API access keys](#get-api-access-keys)
+    - [Start Development Server](#start-development-server)
+    - [Visit this link in your browser](#visit-this-link-in-your-browser)
+    - [Run ESlint](#run-eslint)
+    - [Run Stylelint](#run-stylelint)
+    - [Run Tests](#run-tests)
+    - [Future feature updates/improvements](#future-feature-updatesimprovements)
+  - [Author](#author)
+  - [Show your support](#show-your-support)
+  - [Acknowledgements](#acknowledgements)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -100,6 +111,14 @@ npx stylelint "**/*.{css,scss}"
 ```terminal
 yarn test
 ```
+
+### Future feature updates/improvements
+
+- The upcoming updates will consist of:
+
+1. Ability to check on the track's lyrics on the right side of the track with an option to play a sample of the track.
+2. Functionality to show recommendations of other similar albums based on the selected lists tracks.
+3. A more revamped user interface to filter out results based on the user's search and preferences.
 
 <!-- CONTACT -->
 ## Author
