@@ -13,7 +13,7 @@ describe('Genre Filter component', () => {
     });
   });
 
-  it('GenreFilter component should render', () => {
+  it('GenreFilter component should render correctly', () => {
     const element = component.find('.genre-filter');
     const options = component.find('option');
     expect(element.length).toEqual(1);

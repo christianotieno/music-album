@@ -10,7 +10,7 @@ describe('App component', () => {
     component = setup();
   });
 
-  it('App component should render', () => {
+  it('App component should render correctly', () => {
     const element = component.find('.app');
     expect(element.length).toEqual(1);
   });

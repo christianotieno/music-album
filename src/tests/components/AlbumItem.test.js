@@ -31,7 +31,7 @@ describe('Album Item component', () => {
     });
   });
 
-  it('Album Item component should render', () => {
+  it('Album Item component should render correctly', () => {
     const element = component.find('.album-item');
     expect(element.length).toEqual(1);
 

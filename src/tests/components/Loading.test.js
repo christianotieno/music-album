@@ -11,7 +11,7 @@ describe('Loading component', () => {
     component = setup();
   });
 
-  it('Loading component should render', () => {
+  it('Loading component should render correctly', () => {
     const element = component.find('.loading-wrap');
     expect(element.length).toEqual(1);
   });
