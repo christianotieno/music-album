@@ -1,5 +1,5 @@
 import {
-  getAlbums, getTracks, clearAlbum, changeFilter, trackNotFound,
+  getAlbums, getTracks, clearAlbum, changeFilter, tracksNotFound,
 } from '../../actions/index';
 
 import { albums, tracks } from '../helpers/helper';
@@ -41,8 +41,8 @@ describe('Change Filter', () => {
 
 describe('Tracks Not Found', () => {
   it('Should return an object containing the action', () => {
-    const response = trackNotFound();
+    const response = tracksNotFound();
 
-    expect(response.type).toEqual('TRACK_NOT_FOUND');
+    expect(response.type).toEqual('TRACKS_NOT_FOUND');
   });
 });
