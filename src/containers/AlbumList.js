@@ -8,6 +8,7 @@ import GenreFilter from '../components/GenreFilter';
 import genres from '../helpers/genres';
 import NavBar from '../components/NavBar';
 import '../styles/album-list.css';
+import Loading from '../components/Loading';
 
 const AlbumList = ({
   albums, fetchAlbums, filter, clearAlbum, changeFilter,
@@ -18,6 +19,21 @@ const AlbumList = ({
   }, [fetchAlbums, clearAlbum]);
 
   const handleFilterChange = (filter) => changeFilter(filter);
+
+  if (albums.albumsLoading) {
+    return <Loading />;
+  }
+
+  if (albums.albums === null) {
+    return (
+      <div>
+        <NavBar />
+        <div className="albums-not-loaded">
+          <h2>Error occured. Please try again.</h2>
+        </div>
+      </div>
+    );
+  }
   const filterId = Object.keys(genres).filter((key) => genres[key] === filter)[0];
   const filtered = filter === 'All' ? albums.albums : albums.albums.filter((album) => album.categoryId.includes(parseInt(filterId, 10)));
 

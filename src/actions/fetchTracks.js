@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getTracks } from './index';
+import { getTracks, trackNotFound } from './index';
 import Credentials from '../helpers/Credentials';
 import {
   searchParams,
@@ -30,11 +30,18 @@ const fetchTracks = (albumName) => (dispatch) => {
       }).then((results) => {
         dispatch(getTracks(results.data.tracks.items));
       }).catch((error) => {
-        console.log(error.message);
+        if (error.message === 'Request failed with status code 400') {
+          console.log('Bad Request');
+        } else if (error.message === 'Network Error') {
+          console.log('Not sent: Check Request parameters');
+        } else (console.log(error.message));
       });
     })
     .catch((error) => {
-      console.log(error.message);
+      if (error.message === 'Request failed with status code 400') {
+        dispatch(trackNotFound());
+        console.log('Bad Request');
+      }
     });
 };
 

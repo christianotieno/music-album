@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import fetchTracks from '../actions/fetchTracks';
 import TrackItem from '../components/TrackItem';
 import NavBar from '../components/NavBar';
+import FourOFour from '../components/404';
+import Loading from '../components/Loading';
 
 const Album = ({ albums, match, fetchTracks }) => {
   const { params: { albumName } } = match;
@@ -13,11 +15,12 @@ const Album = ({ albums, match, fetchTracks }) => {
     fetchTracks(albumName);
   }, [fetchTracks, albumName]);
 
-  const div = (
-    <div>Loading...</div>
-  );
-  const element = (
-    <div>
+  if (albums.tracksLoading) {
+    return <Loading />;
+  }
+
+  const view = tracks ? (
+    <div className="tracks-page">
       <NavBar />
       {
           albums.tracks.map((track) => (
@@ -28,8 +31,10 @@ const Album = ({ albums, match, fetchTracks }) => {
           ))
         }
     </div>
+  ) : (
+    <FourOFour />
   );
-  return tracks ? element : div;
+  return view;
 };
 
 const mapStateToProps = ({ albums, tracks }) => ({
