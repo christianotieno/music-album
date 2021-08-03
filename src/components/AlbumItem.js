@@ -15,7 +15,7 @@ const AlbumItem = (props) => {
       role="button"
       tabIndex={0}
     >
-      <img src={album.image} alt={album.title} />
+      <img src={album.image} className="album-item-img" alt={album.title} />
       <div className="album-item-body">
         <h3>{album.title}</h3>
         <p>

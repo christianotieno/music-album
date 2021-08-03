@@ -15,6 +15,8 @@ describe('Genre Filter component', () => {
 
   it('GenreFilter component should render', () => {
     const element = component.find('.genre-filter');
+    const options = component.find('option');
     expect(element.length).toEqual(1);
+    expect(options.length).toEqual(20);
   });
 });
