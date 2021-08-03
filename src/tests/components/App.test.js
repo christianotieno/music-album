@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from '../components/App';
-import '../setupTests';
+import App from '../../components/App';
 
 const setup = () => shallow(<App />);
 
@@ -11,7 +10,7 @@ describe('App component', () => {
     component = setup();
   });
 
-  it('Should render', () => {
+  it('App component should render', () => {
     const element = component.find('.app');
     expect(element.length).toEqual(1);
   });

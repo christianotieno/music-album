@@ -4,7 +4,7 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import NavBar from './NavBar';
 
 const Loading = () => (
-  <div>
+  <div className="loading-wrap">
     <NavBar />
     <div className="loading">
       <Loader
