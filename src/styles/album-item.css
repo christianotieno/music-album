@@ -50,6 +50,7 @@
   bottom: 5px;
   left: 5px;
 }
+
 .album-item-genre {
   display: inline-block;
   background-color: #6b6b6b;
@@ -60,7 +61,6 @@
   border-radius: 5px;
 }
 
-
 .rating {
   padding: 5px;
   position: absolute;
@@ -69,7 +69,6 @@
   font-size: 20px;
   font-weight: 700;
 }
-
 
 .star-icon {
   color: #d4af37;

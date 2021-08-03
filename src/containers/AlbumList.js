@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -20,7 +19,7 @@ const AlbumList = ({
 
   const handleFilterChange = (filter) => changeFilter(filter);
   const filterId = Object.keys(genres).filter((key) => genres[key] === filter)[0];
-  const filtered = filter === 'All' ? albums.albums : albums.albums.filter((album) => album.categoryId.includes(parseInt(filterId)));
+  const filtered = filter === 'All' ? albums.albums : albums.albums.filter((album) => album.categoryId.includes(parseInt(filterId, 10)));
 
   return (
     <div className="album-list">
@@ -47,8 +46,10 @@ const AlbumList = ({
 
 AlbumList.propTypes = {
   albums: PropTypes.instanceOf(Object).isRequired,
+  filter: PropTypes.string.isRequired,
   fetchAlbums: PropTypes.func.isRequired,
   clearAlbum: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ albums, filter }) => ({

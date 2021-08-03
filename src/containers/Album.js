@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+import PropTypes from 'prop-types';
 import fetchTracks from '../actions/fetchTracks';
 import TrackItem from '../components/TrackItem';
 import NavBar from '../components/NavBar';
@@ -35,6 +36,12 @@ const mapStateToProps = ({ albums, tracks }) => ({
   albums,
   tracks,
 });
+
+Album.propTypes = {
+  albums: PropTypes.instanceOf(Object).isRequired,
+  match: PropTypes.instanceOf(Object).isRequired,
+  fetchTracks: PropTypes.func.isRequired,
+};
 
 const mapDispatchToProps = (dispatch) => ({
   fetchTracks: (albumName) => dispatch(fetchTracks(albumName)),
