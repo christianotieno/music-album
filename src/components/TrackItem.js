@@ -27,7 +27,7 @@ const TrackItem = (props) => {
           {' '}
           {track.album.artists[0].name}
         </p>
-        <p>
+        <>
           {track.popularity > 0 ? (
             <p className="rating">
               popularity score: &nbsp;
@@ -40,7 +40,7 @@ const TrackItem = (props) => {
           ) : (
             <p className="rating">Upcoming</p>
           )}
-        </p>
+        </>
       </div>
     </div>
   );

@@ -74,12 +74,12 @@ yarn install
 <!-- Get API access keys -->
 ### Get API access keys
 
-1. In the `/src/helpers` directory, create a file called `Credentials.js` Here, you will create a data structure that will be used to query the Spotify API
-2. Head over to the `src/.env` file and copy the code there into the newly created file, `src/helpers/Credentials.js`.
+1. At the root of the app directory, create an `.env` file. You have are going to place your Spotify API keys here.
+2. Head over to the `.env_example` file and copy the code there into the newly created file, `.env` file.
 3. Now, we need to head over to [Spotify](https://developer.spotify.com/dashboard/login) and get our keys to use here.
 4. In the link provided above, you will need to log in to your Spotify account and create a new app.
 5. Fill in the details, like app name(could be any name) and description. Agree to the terms and click create.
-6. If successful, you will get provided with a list of credentials for your app. Copy them one by one and paste them into the fields in the `src/helpers/Credentials.js` file.
+6. If successful, you will get provided with a list of credentials for your app. Copy them one by one and paste them into the fields in the `.env` file.
 7. Now, we are ready to move to the next section.
 
 ### Start Development Server
