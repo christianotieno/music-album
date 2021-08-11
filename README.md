@@ -115,9 +115,9 @@ yarn test
 
 ### Deployment
 
-|  APP NAME | BUILD STATUS: |
-|   :---:   |    :---:     |
-|**Music Album Catalogue** | [![Netlify Status](https://api.netlify.com/api/v1/badges/df0c7de2-4bc4-43b2-8eb6-e9c1f1388f85/deploy-status)](https://app.netlify.com/sites/react-music-album/deploys) |
+|  APP NAME & LIVE LINK | BUILD STATUS |
+|         :---:         |    :---:     |
+|**[Music Album Catalogue](https://react-music-album.netlify.app/)** | [![Netlify Status](https://api.netlify.com/api/v1/badges/df0c7de2-4bc4-43b2-8eb6-e9c1f1388f85/deploy-status)](https://app.netlify.com/sites/react-music-album/deploys) |
 
 ### Future feature updates/improvements
 
