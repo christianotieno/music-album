@@ -18,6 +18,7 @@
     - [Run ESlint](#run-eslint)
     - [Run Stylelint](#run-stylelint)
     - [Run Tests](#run-tests)
+    - [Deployment](#deployment)
     - [Future feature updates/improvements](#future-feature-updatesimprovements)
   - [Author](#author)
   - [Show your support](#show-your-support)
@@ -111,6 +112,12 @@ npx stylelint "**/*.{css,scss}"
 ```terminal
 yarn test
 ```
+
+### Deployment
+
+|  APP NAME | BUILD STATUS: |
+|   :---:   |    :---:     |
+|**Music Album Catalogue** | [![Netlify Status](https://api.netlify.com/api/v1/badges/df0c7de2-4bc4-43b2-8eb6-e9c1f1388f85/deploy-status)](https://app.netlify.com/sites/react-music-album/deploys) |
 
 ### Future feature updates/improvements
 
