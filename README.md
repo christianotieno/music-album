@@ -142,7 +142,5 @@ Give a star if you like this project!
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-
-* [SaltPay](https://www.microverse.org/)
 * [Spotify - API](https://developer.spotify.com/documentation/web-api/)
 * [Itunes -RSS Feeds](https://itunes.apple.com/us/rss/topalbums/limit=100/json)
